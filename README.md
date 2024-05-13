@@ -41,6 +41,10 @@ history_relu = model_relu.fit(x_train, y_train, epochs=10, validation_data=(x_te
 plot_compare_accs(history_sigmoid, history_relu, name1="Sigmoid", name2="ReLU", title="Accuracy Comparison: Sigmoid vs ReLU")
 plot_compare_losses(history_sigmoid, history_relu, name1="Sigmoid", name2="ReLU", title="Loss Comparison: Sigmoid vs ReLU")
 ```
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/e1f1b1bb-c178-42bb-9785-801f734461c9)
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/8904f937-4aca-491a-bd75-e6187dd98eaa)
+
+
 
 #### ReLU vs. Sigmoid:
 ReLU generalmente converge más rápido y proporciona mejores resultados en redes profundas debido a la menor probabilidad de que ocurra el problema de desvanecimiento de gradiente en comparación con la función sigmoid.
@@ -98,6 +102,12 @@ history_zeros = model_zeros.fit(x_train, y_train, epochs=10, validation_data=(x_
 history_normal = model_normal.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), verbose=0)
 history_glorot = model_glorot.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), verbose=0)
 ```
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/0116dba0-207e-4261-8b52-5489c9ef6e8c)
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/d82c29b0-08fd-44ac-a455-9d86f93da160)
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/fd3eb9b3-1139-4039-a581-30a05593fddd)
+
+
+
 
 ## 3. Optimizadores
 **Ejercicio 3 *(2.5 puntos)***: Partiendo de una red similar a la del ejercicio anterior (utilizando la mejor estrategia de inicialización observada), comparar y analizar las diferencias que se observan  al entrenar con varios de los optimizadores vistos en clase, incluyendo SGD como optimizador básico (se puede explorar el espacio de hiperparámetros de cada optimizador, aunque para optimizadores más avanzados del estilo de adam y RMSprop es buena idea dejar los valores por defecto provistos por Keras).
@@ -127,6 +137,10 @@ for name, optimizer in optimizers.items():
     model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     histories[name] = model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), verbose=0)
 ```
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/f5fede5c-b296-4447-b751-ab83179f4778)
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/918d117f-8b51-4b9b-b87a-a2c40d79138b)
+
+
 
 ## 4. Regularización y red final *(2.5 puntos)*
 **Ejercicio 4.1**: Entrenar una red final que sea capaz de obtener una accuracy en el validation set cercana al 90%. Para ello, combinar todo lo aprendido anteriormente y utilizar técnicas de regularización para evitar overfitting. Algunos de los elementos que pueden tenerse en cuenta son los siguientes.
@@ -187,6 +201,8 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.show()
 ```
+![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/9ebc3f8a-3ad6-480c-952f-2ddaf3addd3a)
+
 
 ## Estrategia para el Modelo Final
 + Número de capas y neuronas: Utilizar una estructura profunda con suficientes neuronas para capturar la complejidad del problema sin caer en overfitting.
@@ -227,7 +243,8 @@ print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 val_accuracy = max(history.history['val_accuracy'])  # Mejor precisión de validación durante el entrenamiento
 print(f"Best Validation Accuracy: {val_accuracy * 100:.2f}%")
 ```
-(![Salida del codigo](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/38f64567-d593-4495-accf-6acce999e0d3)
+![Salida del codigo](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/38f64567-d593-4495-accf-6acce999e0d3)
+![Salida del codigo_2](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/8589fe71-0211-4180-9fc6-a0d11c26f006)
 
 ## Comentarios sobre los resultados
 1. Precisión en el Test vs. Validación: El resultado de la precisión en el conjunto de test debería ser comparado con la mejor precisión observada en el conjunto de validación. Si ambos valores son cercanos, indica que el modelo ha generalizado bien y no ha sufrido de overfitting significativo.
