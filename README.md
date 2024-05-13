@@ -227,7 +227,7 @@ print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 val_accuracy = max(history.history['val_accuracy'])  # Mejor precisión de validación durante el entrenamiento
 print(f"Best Validation Accuracy: {val_accuracy * 100:.2f}%")
 ```
-![Salida del codigo](![image](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/38f64567-d593-4495-accf-6acce999e0d3)
+(![Salida del codigo](https://github.com/PJBigBoss115/redesKeras_2/assets/65696918/38f64567-d593-4495-accf-6acce999e0d3)
 
 ## Comentarios sobre los resultados
 1. Precisión en el Test vs. Validación: El resultado de la precisión en el conjunto de test debería ser comparado con la mejor precisión observada en el conjunto de validación. Si ambos valores son cercanos, indica que el modelo ha generalizado bien y no ha sufrido de overfitting significativo.
