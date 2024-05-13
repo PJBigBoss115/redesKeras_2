@@ -57,6 +57,7 @@ En este ejercicio, vamos a evaluar la importancia de una correcta inicializació
 * Inicialización con una variable aleatoria normal.
 * Inicialización con los valores por defecto de Keras para una capa Dense (estrategia *glorot uniform*)
 
+### Solucion:
 ```python
 # Inicializadores
 zero_initializer = Zeros()
@@ -101,6 +102,7 @@ history_glorot = model_glorot.fit(x_train, y_train, epochs=10, validation_data=(
 ## 3. Optimizadores
 **Ejercicio 3 *(2.5 puntos)***: Partiendo de una red similar a la del ejercicio anterior (utilizando la mejor estrategia de inicialización observada), comparar y analizar las diferencias que se observan  al entrenar con varios de los optimizadores vistos en clase, incluyendo SGD como optimizador básico (se puede explorar el espacio de hiperparámetros de cada optimizador, aunque para optimizadores más avanzados del estilo de adam y RMSprop es buena idea dejar los valores por defecto provistos por Keras).
 
+### Solucion:
 ```python
 # Inicializador Glorot Uniform
 initializer = GlorotUniform()
@@ -141,6 +143,7 @@ Si los modelos entrenados anteriormente ya se acercaban al valor requerido de ac
 
 Explicar brevemente la estrategia seguida y los modelos probados para obtener el modelo final, que debe verse entrenado en este Notebook. No es necesario guardar el entrenamiento de todos los modelos que se han probado, es suficiente con explicar cómo se ha llegado al modelo final.
 
+### Solucion:
 ```python
 # Inicialización del modelo utilizando la API Sequential de Keras.
 model = Sequential([
@@ -212,6 +215,7 @@ Una vez elegido el que creemos que es nuestro mejor modelo a partir de la estima
 
 **Pregunta 4.2**. Utilizando nuestro mejor modelo, obtener la accuracy resultante en el dataset de test. Comentar este resultado.
 
+### Solucion:
 ```python
 # Evaluación del modelo en el conjunto de test
 test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)
